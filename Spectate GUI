@@ -1,0 +1,57 @@
+local screengui = Instance.new("ScreenGui")
+screengui.Name = "Spectate"
+screengui.ResetOnSpawn = true
+screengui.Parent = game.Players.LocalPlayer.PlayerGui
+-------
+local frame = Instance.new("Frame")
+frame.BorderSizePixel = 0
+frame.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+frame.Position = UDim2.new(0.5, -100, 0, 0)
+frame.Size = UDim2.new(0, 210, 0, 50)
+frame.Draggable = true
+frame.Active = true
+frame.Parent = screengui
+-------
+local textbox = Instance.new("TextBox")
+textbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+textbox.BorderSizePixel = 0
+textbox.ClearTextOnFocus = true
+textbox.Position = UDim2.new(0,0, 0, 0)
+textbox.Size = UDim2.new(0, 200, 0, 25)
+textbox.TextSize = 15
+textbox.Font = Enum.Font.SourceSansBold
+textbox.Text = "Player"
+textbox.PlaceholderText = ""
+textbox.TextColor3 = Color3.new(255, 255, 255)
+textbox.Parent = frame
+-------
+local textbutton = Instance.new("TextButton")
+textbutton.Active = true
+textbutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+textbutton.BorderSizePixel = 0
+textbutton.Position = UDim2.new(0,0, 1, -25)
+textbutton.Selectable = true
+textbutton.Size = UDim2.new(0, 200, 0, 25)
+textbutton.Style = Enum.ButtonStyle.Custom
+textbutton.Font = Enum.Font.SourceSansBold
+textbutton.TextSize = 15
+textbutton.Text = "Resetar"
+textbutton.TextColor3 = Color3.new(255, 255, 255)
+textbutton.TextWrapped = true
+textbutton.Parent = frame
+-------
+textbox.FocusLost:connect(function(enter)
+if enter then
+local text = textbox.Text
+local players = game.Players:GetChildren()
+for _,v in pairs (players) do
+if string.match(string.lower(v.Name),string.lower(text)) then
+workspace.Camera.CameraSubject = v.Character
+end
+end
+end
+end)
+
+textbutton.MouseButton1Click:connect(function()
+workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character
+end)
