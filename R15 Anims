@@ -64,7 +64,7 @@ Close.Position = UDim2.new(0.899999976, 0, 0, 0)
 Close.Size = UDim2.new(0, 30, 0, 30)
 Close.Font = Enum.Font.SciFi
 Close.Text = "x"
-Close.TextColor3 = Color3.new(200, 0,0)
+Close.TextColor3 = Color3.new(200,0,0)
 Close.TextSize = 20
 Close.MouseButton1Click:Connect(function()
     wait(0.3)
@@ -442,11 +442,11 @@ end)
 
 Category.Name = "Category"
 Category.Parent = NormalTab
-Category.BackgroundColor3 = Color3.new(200,0,0)
+Category.BackgroundColor3 = Color3.new(0,0,0)
 Category.BorderSizePixel = 0
 Category.Size = UDim2.new(0, 150, 0, 30)
 Category.Text = "Normal"
-Category.TextColor3 = Color3.new(0, 0.835294, 1)
+Category.TextColor3 = Color3.new(200,0,0)
 Category.TextSize = 14
 
 SpecialTab.Name = "SpecialTab"
@@ -607,11 +607,11 @@ end)
 
 Category_2.Name = "Category"
 Category_2.Parent = SpecialTab
-Category_2.BackgroundColor3 = Color3.new(200,0,0)
+Category_2.BackgroundColor3 = Color3.new(0,0,0)
 Category_2.BorderSizePixel = 0
 Category_2.Size = UDim2.new(0, 150, 0, 30)
 Category_2.Text = "Special"
-Category_2.TextColor3 = Color3.new(0, 0.835294, 1)
+Category_2.TextColor3 = Color3.new(200,0,0)
 Category_2.TextSize = 14
 
 OtherTab.Name = "OtherTab"
@@ -624,11 +624,11 @@ OtherTab.Size = UDim2.new(0, 150, 0, 220)
 
 Category_3.Name = "Category"
 Category_3.Parent = OtherTab
-Category_3.BackgroundColor3 = Color3.new(200,0,0)
+Category_3.BackgroundColor3 = Color3.new(0,0,0)
 Category_3.BorderSizePixel = 0
 Category_3.Size = UDim2.new(0, 150, 0, 30)
 Category_3.Text = "Other"
-Category_3.TextColor3 = Color3.new(0, 0.835294, 1)
+Category_3.TextColor3 = Color3.new(200,0,0)
 Category_3.TextSize = 14
 
 A_None.Name = "A_None"
