@@ -9,7 +9,7 @@ public = false
 publicItalics = false
 --customize private logs
 privateProperties = {
-	Color = Color3.fromRGB(150, 0, 0); 
+	Color = Color3.fromRGB(200, 0, 0); 
 	Font = Enum.Font.SourceSansBold;
 	TextSize = 18;
 }
