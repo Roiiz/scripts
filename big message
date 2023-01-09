@@ -253,11 +253,7 @@ local gmt = getrawmetatable(game)
 setreadonly(gmt, false)
 local oldNameCall = gmt.__namecall
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = 'Big Messages Enabled',
-	Text = 'Start your messages with '.. prefix,
-	Icon = '',
-	Duration = 5,
+
 })
 
 gmt.__namecall = newcclosure(function(self, ...)
