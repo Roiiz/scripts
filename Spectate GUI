@@ -1,21 +1,21 @@
 local screengui = Instance.new("ScreenGui")
 screengui.Name = "Spectate"
-screengui.ResetOnSpawn = true
+screengui.ResetOnSpawn = false
 screengui.Parent = game.Players.LocalPlayer.PlayerGui
 -------
 local frame = Instance.new("Frame")
 frame.BorderSizePixel = 0
 frame.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
 frame.Position = UDim2.new(0.5, -100, 0, 0)
-frame.Size = UDim2.new(0, 210, 0, 50)
-frame.Draggable = true
-frame.Active = true
+frame.Size = UDim2.new(0, 200, 0, 85)
+frame.Draggable = false
+frame.Active = false
 frame.Parent = screengui
 -------
 local textbox = Instance.new("TextBox")
 textbox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 textbox.BorderSizePixel = 0
-textbox.ClearTextOnFocus = true
+textbox.ClearTextOnFocus = false
 textbox.Position = UDim2.new(0,0, 0, 0)
 textbox.Size = UDim2.new(0, 200, 0, 25)
 textbox.TextSize = 15
@@ -29,7 +29,7 @@ local textbutton = Instance.new("TextButton")
 textbutton.Active = true
 textbutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 textbutton.BorderSizePixel = 0
-textbutton.Position = UDim2.new(0,0, 1, -25)
+textbutton.Position = UDim2.new(0,0, 1, -55)
 textbutton.Selectable = true
 textbutton.Size = UDim2.new(0, 200, 0, 25)
 textbutton.Style = Enum.ButtonStyle.Custom
@@ -39,6 +39,21 @@ textbutton.Text = "Reset"
 textbutton.TextColor3 = Color3.new(255, 255, 255)
 textbutton.TextWrapped = true
 textbutton.Parent = frame
+-------
+local closebutton = Instance.new("TextButton")
+closebutton.Active = true
+closebutton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+closebutton.BorderSizePixel = 0
+closebutton.Position = UDim2.new(0,0, 1, -25)
+closebutton.Selectable = true
+closebutton.Size = UDim2.new(0, 200, 0, 25)
+closebutton.Style = Enum.ButtonStyle.Custom
+closebutton.Font = Enum.Font.SourceSansBold
+closebutton.TextSize = 15
+closebutton.Text = "Close"
+closebutton.TextColor3 = Color3.new(255, 255, 255)
+closebutton.TextWrapped = true
+closebutton.Parent = frame
 -------
 textbox.FocusLost:connect(function(enter)
 if enter then
@@ -54,4 +69,8 @@ end)
 
 textbutton.MouseButton1Click:connect(function()
 workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character
+end)
+
+closebutton.MouseButton1Click:connect(function()
+ game:GetService("Players").LocalPlayer.PlayerGui.Spectate:Destroy()
 end)
