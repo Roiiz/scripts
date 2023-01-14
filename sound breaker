@@ -298,6 +298,8 @@ Stop.MouseButton1Click:Connect(function()
 	Active = false
 end)
 
+notification:Play()
+
 --Check:
 while true do
 	wait()
