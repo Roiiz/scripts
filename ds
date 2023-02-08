@@ -1,4 +1,3 @@
-repeat wait() until game:IsLoaded()
 task.wait(10)
 local hasToken = nil
 for i,v in pairs(game:GetService("Players").LocalPlayer.MemoryCard.Tokens:GetChildren()) do
